@@ -1,0 +1,17 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: rsa-encryption
+
+client:
+  publicKey: |
+    -----BEGIN PUBLIC KEY-----
+    yourBigLongPublicKeyShouldBeHere_DifferentForProd
+    -----END PUBLIC KEY-----
+  # privateKey from env variable for production
+  privateKey: |
+    -----BEGIN PRIVATE KEY-----
+    ${CLIENT_PRIVATE_KEY}
+    -----END PRIVATE KEY-----
